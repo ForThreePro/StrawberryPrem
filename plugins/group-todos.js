@@ -5,7 +5,7 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
       return;
     }
 
-    const customMessage = args.join(' ') || '⚡ Notificación del Sistema';
+    const customMessage = args.join(' ') || '🍓 Notificación del Jardín';
     const groupMetadata = await conn.groupMetadata(m.chat).catch(() => ({ subject: 'Grupo', participants: [] }));
     const groupName = groupMetadata.subject;
 
@@ -39,7 +39,7 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
       if (match2) return match2.bandera;
       const match1 = countryFlags.find(c => c.prefijo.length === 1 && phoneNumber.startsWith(c.prefijo));
       if (match1) return match1.bandera;
-      return '🚩';
+      return '🍓';
     };
 
     // Agrupar participantes por bandera
@@ -50,22 +50,26 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
       grouped[flag].push(mem);
     }
 
-    const orderedFlags = countryFlags.map(c => c.bandera).concat(['🚩']);
+    const orderedFlags = countryFlags.map(c => c.bandera).concat(['🍓']);
 
-    // Texto con estética Cyber Bot
-    let messageText = `ᯇ 𝗖𝗬𝗕𝗘𝗥 𝗕𝗢𝗧 💻 ୧
+    // Texto con estética STRAWBERRY BOT
+    let messageText = `🍓━━━━━━━━🍓
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘 𝐁𝐎𝐓 ✨
+🍓━━━━━━━━🍓
 
- ⤷ ┇ 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢𝗡 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 ：✿ 。
-꒰ ◞⁺⊹ ．grupo • ${groupName}
+╭─「 🌸 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎𝐍 」─╮
+│
+│ 💖 𝗚𝗿𝘂𝗽𝗼 : ${groupName}
+│ 🍓 𝗠𝗲𝗻𝘀𝗮𝗷𝗲 : ${customMessage}
+│
+╚━━━━━━━━━━╝
 
- ꒱ ׁ. ᘏ 𝗆𝖾𝗇𝗌⍺𝗃𝖾 ׅ 𝆬
-🤖 ${customMessage} ࣪ ꕀ ˚
-> *"Conectando a todos los usuarios"*
+🌸 "𝗖𝗼𝗻𝗲𝗰𝘁𝗮𝗻𝗱𝗼 𝗮 𝘁𝗼𝗱𝗮𝘀 𝗹𝗮𝘀 𝗳𝗹𝗼𝗿𝗲𝘀" 🍓
 
-──愛 *INTEGRANTES* ╏ 📊
-👥 Total: ${participants.length} usuarios
+──🍓 *𝗜𝗡𝗧𝗘𝗚𝗥𝗔𝗡𝗧𝗘𝗦* ──
+👥 𝗧𝗼𝘁𝗮𝗹 : ${participants.length} 𝘂𝘀𝘂𝗮𝗿𝗶𝗮𝘀
 
-──💻 *LISTA POR PAÍS* 💻──
+──🌸 *𝗟𝗜𝗦𝗧𝗔 𝗣𝗢𝗥 𝗣𝗔𝗜𝗦* 🌸──
 `
 
     for (const flag of orderedFlags) {
@@ -78,19 +82,22 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
       }
     }
 
-    messageText += `.⃟𖥔 ݁💻𖦹˙— *CYBER BOT SYSTEM* —˙𖦹💻꒷
-🤖 Creador: Whois Yallico 👑
-💻 Versión: 3.1.5 Cyber Clean
+    messageText += `
+🍓━━━━━━━━━━━━━━━🍓
+✨ *𝗕𝗢𝗧:* 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘 𝐁𝐎𝐓
+💖 *𝗖𝗥𝗘𝗔𝗗𝗢𝗥:* 𝗧𝘂 𝗔𝗺𝗶𝗴𝗮 𝗣𝗿𝗲𝗳𝗲𝗿𝗶𝗱𝗮 👑
+🌸 *𝗩𝗘𝗥𝗦𝗜𝗢𝗡:* 1.0 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘
+🍓━━━━━━━━━━━━━━━🍓
 
-> *"Sistema conectado a todos"* 💻
- ㅤ└──.✦ ── ⊰ ̟!!.✦. `;
+🌸 "𝗘𝗹 𝗷𝗮𝗿𝗱𝗶𝗻 𝗲𝘀𝘁𝗮 𝗰𝗼𝗺𝗽𝗹𝗲𝘁𝗼" 🍓
+`;
 
-    // NUEVO: Detectar foto del grupo
+    // Foto del grupo
     let img
     try {
-      img = await conn.profilePictureUrl(m.chat, 'image') // Foto del grupo
+      img = await conn.profilePictureUrl(m.chat, 'image')
     } catch {
-      img = 'https://files.evogb.win/jgBvm8.jpg' // Fallback cyber
+      img = 'https://i.imgur.com/KhY9KkB.png' // Fallback fresita
     }
 
     await conn.sendMessage(m.chat, {
@@ -100,12 +107,18 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
     }, { quoted: m });
 
   } catch (error) {
-    console.error("[ERROR EN CYBER BOT]:", error);
-    conn.reply(m.chat, `╭─❒ *『 𝗖𝗬𝗕𝗘𝗥 𝗕𝗢𝗧 』* ❒
-│ ❌ *ERROR DE SISTEMA*
+    console.error("[ERROR EN STRAWBERRY BOT]:", error);
+    conn.reply(m.chat, `🍓━━━━━━━━🍓
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘 𝐁𝐎𝐓 ✨
+🍓━━━━━━━━🍓
+
+╭─「 ❌ 𝐄𝐑𝐎𝐑 」─╮
 │
-│ ⚡ *Ocurrió un error al ejecutar el comando*
-╰─────────────────❒`, m);
+│ 🌸 𝗢𝗰𝘂𝗿𝗶𝗼 𝘂𝗻 𝗲𝗿𝗿𝗼𝗿
+│ 🍓 𝗮𝗹 𝗲𝗷𝗲𝗰𝘂𝘁𝗮𝗿 𝗲𝗹 𝗰𝗼𝗺𝗮𝗻𝗱𝗼
+│
+╚━━━━━━━━━━╝
+`, m);
   }
 };
 
