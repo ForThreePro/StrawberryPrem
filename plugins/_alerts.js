@@ -42,39 +42,47 @@ handler.before = async function (m, { conn }) {
         }
     }
 
-    // DISEÑO CYBER PROMOTE
+    // DISEÑO STRAWBERRY PROMOTE 🍓
     const admingp = `
-╔═══「 👑 𝐀𝐒𝐂𝐄𝐍𝐒𝐎 」═══╗
-║
-║ 𝗧𝗔𝗥𝗚𝗘𝗧 : ${userTag}
-║ 𝗦𝗧𝗔𝗧𝗨𝗦 : ✅ RANGO ASIGNADO
-║ 𝗕𝗬 : ${adminTag}
-║
-╠═══「 𝗣𝗘𝗥𝗠𝗜𝗦𝗢𝗦 」═══╣
-║ [✓] Expulsar / Promover
-║ [✓] Editar Info Grupo
-║ [✓] Cambiar Config
-║ [✓] Anuncios
-╚═══════════╝
+🍓━━━━━━━━🍓
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐘 𝐁𝐎𝐓 ✨
+🍓━━━━━━━━🍓
 
-> 𝙴𝚕 𝚙𝚘𝚍𝚎𝚛 𝚌𝚘𝚗𝚕𝚎𝚟𝚊 𝚛𝚎𝚜𝚙𝚘𝚗𝚜𝚊𝚋𝚒𝚕𝚒𝚍𝚊𝚍
+╭─「 👑 𝐀𝐒𝐂𝐄𝐍𝐒𝐎 𝐃𝐄 𝐑𝐀𝐍𝐆𝐎 」─╮
+│
+│ 🍓 𝗣𝗿𝗶𝗻𝗰𝗲𝘀𝗮 : ${userTag}
+│ 🌸 𝗘𝘀𝘁𝗮𝗱𝗼 : ✅ 𝐀𝐝𝐦𝐢𝐧 𝐀𝐬𝐢𝐠𝐧𝐚𝐝𝐨
+│ 💖 𝗢𝘁𝗼𝗿𝗴𝗮𝗱𝗼 𝗽𝗼𝗿 : ${adminTag}
+│
+╠──「 ✨ 𝐏𝐄𝐑𝐌𝐈𝐒𝐎𝐒 𝐑𝐄𝐀𝐋𝐄𝐒 」──╣
+│ [✓] Expulsar y Promover
+│ [✓] Editar Info del Grupo
+│ [✓] Cambiar Configuración
+│ [✓] Enviar Anuncios
+╚━━━━━━━━━━╝
+
+🌸 𝙻𝚊 𝚍𝚞𝚕𝚣𝚞𝚛𝚊 𝚌𝚘𝚗 𝚊𝚌𝚝𝚒𝚝𝚞𝚍 𝚕𝚕𝚎𝚐𝚘 🌸
 `.trim()
 
-    // DISEÑO CYBER DEMOTE
+    // DISEÑO STRAWBERRY DEMOTE 🍓
     const noadmingp = `
-╔═══「 🔒 𝐃𝐄𝐒𝐂𝐄𝐍𝐒𝐎 」═══╗
-║
-║ 𝗧𝗔𝗥𝗚𝗘𝗧 : ${userTag}
-║ 𝗦𝗧𝗔𝗧𝗨𝗦 : ❌ RANGO REVOCADO
-║ 𝗕𝗬 : ${adminTag}
-║
-╠═══「 𝗔𝗖𝗘𝗦𝗢 𝗗𝗘𝗡𝗘𝗚𝗔𝗗𝗢 」═══╣
-║ [✗] Sin permisos de admin
-║ [✗] Comandos bloqueados
-║ [✗] Solo miembro
-╚═════════╝
+🍓━━━━━━━━🍓
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐘 𝐁𝐎𝐓 ✨
+🍓━━━━━━━━🍓
 
-> 𝚂𝚒𝚗 𝚛𝚊𝚗𝚐𝚘, 𝚜𝚒𝚗 𝚙𝚘𝚍𝚎𝚛
+╭─「 🔒 𝐃𝐄𝐒𝐂𝐄𝐍𝐒𝐎 𝐃𝐄 𝐑𝐀𝐍𝐆𝐎 」─╮
+│
+│ 🍓 𝗣𝗿𝗶𝗻𝗰𝗲𝘀𝗮 : ${userTag}
+│ 🌸 𝗘𝘀𝘁𝗮𝗱𝗼 : ❌ 𝐑𝐚𝐧𝐠𝐨 𝐑𝐞𝐯𝐨𝐜𝐚𝐝𝐨
+│ 💖 𝗥𝗲𝘃𝗼𝗰𝗮𝗱𝗼 𝗽𝗼𝗿 : ${adminTag}
+│
+╠──「 🥺 𝐀𝐂𝐄𝐒𝐎 𝐋𝐈𝐌𝐈𝐓𝐀𝐃𝐎 」──╣
+│ [✗] Sin permisos de admin
+│ [✗] Comandos de admin bloqueados
+│ [✗] Modo miembro normal
+╚━━━━━━━━━━╝
+
+🌸 𝚂𝚒𝚗 𝚌𝚘𝚛𝚘𝚗𝚊, 𝚙𝚎𝚛𝚘 𝚜𝚒𝚐𝚞𝚎𝚜 𝚜𝚒𝚎𝚗𝚍𝚘 𝚎𝚜𝚙𝚎𝚌𝚒𝚊𝚕 🌸
 `.trim()
 
     // LIMPIAR SESSION SI KICKEAN BOT
@@ -95,7 +103,7 @@ handler.before = async function (m, { conn }) {
         await conn.sendMessage(m.chat, {
             image: { url: banner },
             caption: admingp,
-       ...context
+      ...context
         }, { quoted: null })
         return
     }
@@ -105,7 +113,7 @@ handler.before = async function (m, { conn }) {
         await conn.sendMessage(m.chat, {
             image: { url: banner },
             caption: noadmingp,
-       ...context
+      ...context
         }, { quoted: null })
         return
     }
