@@ -20,7 +20,7 @@ conn.reply(m.chat, `🍓━━━━━━━━🍓
 
 }
 handler.help = ['link']
-handler.tags = ['group']
+handler.tags = ['grupo']
 handler.command = ['link', 'enlace', 'invitacion']
 handler.group = true
 handler.botAdmin = true
