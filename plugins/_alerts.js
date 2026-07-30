@@ -45,7 +45,7 @@ handler.before = async function (m, { conn }) {
     // DISEÑO STRAWBERRY PROMOTE 🍓
     const admingp = `
 🍓━━━━━━━━🍓
-   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐘 𝐁𝐎𝐓 ✨
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘 𝐁𝐎𝐓 ✨
 🍓━━━━━━━━🍓
 
 ╭─「 👑 𝐀𝐒𝐂𝐄𝐍𝐒𝐎 𝐃𝐄 𝐑𝐀𝐍𝐆𝐎 」─╮
@@ -67,7 +67,7 @@ handler.before = async function (m, { conn }) {
     // DISEÑO STRAWBERRY DEMOTE 🍓
     const noadmingp = `
 🍓━━━━━━━━🍓
-   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐘 𝐁𝐎𝐓 ✨
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘 𝐁𝐎𝐓 ✨
 🍓━━━━━━━━🍓
 
 ╭─「 🔒 𝐃𝐄𝐒𝐂𝐄𝐍𝐒𝐎 𝐃𝐄 𝐑𝐀𝐍𝐆𝐎 」─╮
