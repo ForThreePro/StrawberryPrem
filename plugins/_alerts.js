@@ -38,7 +38,7 @@ handler.before = async function (m, { conn }) {
         try {
             banner = await conn.profilePictureUrl(m.chat, 'image')
         } catch {
-            banner = 'https://i.imgur.com/2wzZ3eB.png'
+            banner = 'https://files.evogb.win/ksYsKo.jpg'
         }
     }
 
