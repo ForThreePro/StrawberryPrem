@@ -9,50 +9,59 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner }) {
   if (!m.text) return;
 
   const emojiResponses = {
-    "hola": "👋", "buenas": "👋",
-    "gracias": "🙏", "thx": "🙏",
-    "adiós": "👋", "chau": "👋", "bye": "👋",
-    "jaja": "😂", "xd": "😂", "lol": "😂",
-    "triste": "😢", "sad": "😢",
-    "genial": "😎", "god": "😎",
-    "amor": "❤️", "love": "❤️",
-    "ok": "👌", "dale": "👌",
-    "wow": "😮", "wtf": "😮",
-    "ayuda": "❓", "help": "❓",
-    "bien": "😊", "good": "😊",
-    "mal": "😞", "bad": "😞",
-    "feliz": "😁", "happy": "😁",
-    "sí": "✅", "si": "✅", "yes": "✅",
-    "no": "❌", "nop": "❌",
-    "comida": "🍕", "hambre": "🍕",
-    "fiesta": "🎉", "party": "🎉",
-    "musica": "🎵", "music": "🎵",
-    "dinero": "💵", "plata": "💵",
-    "trabajo": "💼",
-    "casa": "🏠", "home": "🏠",
-    "sol": "☀️", "calor": "☀️",
-    "lluvia": "🌧️", "frio": "🌧️",
-    "noche": "🌙",
-    "estrella": "⭐",
-    "fuego": "🔥", "hot": "🔥",
-    "agua": "💧",
-    "corazón": "💖", "corazon": "💖",
-    "beso": "💋",
-    "abrazo": "🤗",
-    "tiempo": "⏰",
-    "café": "☕", "cafe": "☕",
-    "idea": "💡",
-    "regalo": "🎁",
-    "carro": "🚗",
-    "viaje": "✈️",
-    "teléfono": "📱", "telefono": "📱",
-    "computadora": "💻", "pc": "💻",
-    "error": "❗",
-    "robot": "🤖", "bot": "🤖",
-    "flor": "🌸",
-    "árbol": "🌳", "arbol": "🌳",
-    "montaña": "⛰️", "montana": "⛰️",
-    "mar": "🌊", "playa": "🌊",
+    // SALUDOS
+    "hola": "👋🍓", "buenas": "👋🌸", "hello": "👋✨",
+    "gracias": "🙏💖", "thx": "🙏🍓", "muchas gracias": "🙏🌸",
+    "adiós": "👋💖", "chau": "👋🍓", "bye": "👋🌸",
+    
+    // RISAS
+    "jaja": "😂🍓", "xd": "😂🌸", "lol": "😂💖", "aj": "😂✨",
+    
+    // EMOCIONES
+    "triste": "😢🍓", "sad": "😢🌸", "llorar": "😭💖",
+    "genial": "😎🍓", "god": "😎🌸", "pro": "😎💖",
+    "amor": "❤️🍓", "love": "❤️🌸", "te amo": "❤️💖",
+    "ok": "👌🍓", "dale": "👌🌸", "ya": "👌💖",
+    "wow": "😮🍓", "wtf": "😮🌸", "que": "😮💖",
+    "ayuda": "❓🍓", "help": "❓🌸", "helpme": "❓💖",
+    "bien": "😊🍓", "good": "😊🌸", "nice": "😊💖",
+    "mal": "😞🍓", "bad": "😞🌸", "triste": "😞💖",
+    "feliz": "😁🍓", "happy": "😁🌸", "contenta": "😁💖",
+    
+    // SI/NO
+    "sí": "✅🍓", "si": "✅🌸", "yes": "✅💖",
+    "no": "❌🍓", "nop": "❌🌸", "nel": "❌💖",
+    
+    // COMIDA Y COSAS 🍓
+    "comida": "🍕🍓", "hambre": "🍕🌸", "tengo hambre": "🍓💖",
+    "fiesta": "🎉🍓", "party": "🎉🌸", "celebrar": "🎉💖",
+    "musica": "🎵🍓", "music": "🎵🌸", "cantar": "🎵💖",
+    "dinero": "💵🍓", "plata": "💵🌸", "rico": "💵💖",
+    "trabajo": "💼🍓",
+    "casa": "🏠🍓", "home": "🏠🌸",
+    "sol": "☀️🍓", "calor": "☀️🌸",
+    "lluvia": "🌧️🍓", "frio": "🌧️🌸",
+    "noche": "🌙🍓",
+    "estrella": "⭐🍓",
+    "fuego": "🔥🍓", "hot": "🔥🌸",
+    "agua": "💧🍓",
+    "corazón": "💖🍓", "corazon": "💖🌸",
+    "beso": "💋🍓",
+    "abrazo": "🤗🍓",
+    "tiempo": "⏰🍓",
+    "café": "☕🍓", "cafe": "☕🌸",
+    "idea": "💡🍓",
+    "regalo": "🎁🍓",
+    "carro": "🚗🍓",
+    "viaje": "✈️🍓",
+    "teléfono": "📱🍓", "telefono": "📱🌸",
+    "computadora": "💻🍓", "pc": "💻🌸",
+    "error": "❗🍓",
+    "robot": "🤖🍓", "bot": "🤖🌸",
+    "flor": "🌸🍓",
+    "árbol": "🌳🍓", "arbol": "🌳🌸",
+    "montaña": "⛰️🍓", "montana": "⛰️🌸",
+    "mar": "🌊🍓", "playa": "🌊🌸",
   };
 
   const lowerMessage = m.text.toLowerCase();
@@ -66,9 +75,9 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner }) {
     }
   }
 
-  // Si no encontró nada, 30% de probabilidad de reaccionar random
+  // Si no encontró nada, 30% de probabilidad de reaccionar random con temática fresa
   if (!emojiToReact && Math.random() < 0.3) {
-    const allEmojis = ["😀", "😃", "😄", "😁", "😆", "😂", "🤣", "😊", "😇", "😉", "😍", "🥰", "😘", "🤗", "🤔", "😌", "😏", "🔥", "💯", "✨"];
+    const allEmojis = ["😀🍓", "😊🌸", "💖✨", "🍓💕", "🌸👑", "✨🍓", "💖🌸", "😌🍓", "🥰🌸", "🤗💖"];
     emojiToReact = allEmojis[Math.floor(Math.random() * allEmojis.length)];
   }
 
@@ -76,9 +85,9 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner }) {
 
   try {
     await m.react(emojiToReact);
-    console.log(`✰ [REACTION] ${m.chat.split('@')[0]} → ${emojiToReact}`);
+    console.log(`🍓 [STRAWBERRY REACTION] ${m.chat.split('@')[0]} → ${emojiToReact}`);
   } catch (err) {
-    console.error("❏ Error al reaccionar:", err);
+    console.error("🍓 Error al reaccionar:", err);
   }
 
   return true;
