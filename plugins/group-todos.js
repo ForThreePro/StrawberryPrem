@@ -97,7 +97,7 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
     try {
       img = await conn.profilePictureUrl(m.chat, 'image')
     } catch {
-      img = 'https://i.imgur.com/KhY9KkB.png' // Fallback fresita
+      img = 'https://files.evogb.win/ksYsKo.jpg' // Fallback fresita
     }
 
     await conn.sendMessage(m.chat, {
