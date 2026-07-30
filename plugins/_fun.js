@@ -42,7 +42,7 @@ let handler = async (m, { conn, command, text }) => {
 
     if(!target &&!['2p2','3p3','duo'].includes(command.toLowerCase()))
         return m.reply(`🍓━━━━━━━━🍓
-   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐘 𝐁𝐎𝐓 ✨
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘 𝐁𝐎𝐓 ✨
 🍓━━━━━━━━🍓
 
 ╭─「 ❌ 𝐄𝐑𝐎𝐑 」─╮
@@ -95,7 +95,7 @@ ${BOX_BOT}`
         case 'bellaka':
             mentions = [target]
             txt = `${BOX_TOP}
-╭─「 💅 𝐁𝐄𝐋𝐀𝐊𝐀 𝐃𝐄𝐓𝐄𝐂𝐓𝐀𝐃𝐀 」─╮
+╭─「 💅 𝐁𝐄𝐋𝐋𝐀𝐊𝐀 𝐃𝐄𝐓𝐄𝐂𝐓𝐀𝐃𝐀 」─╮
 │
 │ 🍓 𝗧𝗮𝗿𝗴𝗲𝘁 : ${jidToTag(target)}
 │ 🌸 𝗣𝗲𝗿𝗲𝗼 : ${porcentaje}%
@@ -107,7 +107,7 @@ ${BOX_BOT}`
         case 'brother':
             mentions = [target]
             txt = `${BOX_TOP}
-╭─「 🤭 𝐅𝐑𝐀𝐒𝐄 𝐏𝐈𝐓𝐔𝐅𝐀 」─╮
+╭─「 🤭 𝐅𝐑𝐀𝐒𝐄 𝐏𝐈𝐓𝐔𝐂𝐀 」─╮
 │
 │ 🍓 𝗧𝗮𝗿𝗴𝗲𝘁 : ${jidToTag(target)}
 │ 🌸 𝗙𝗿𝗮𝘀𝗲 : ${frasesBro[Math.floor(Math.random()*4)]}
@@ -117,7 +117,7 @@ ${BOX_BOT}`
         case 'perroinfiel':
             mentions = [target]
             txt = `${BOX_TOP}
-╭─「 💔 𝐏𝐄𝐑𝐎 𝐈𝐍𝐅𝐈𝐄𝐋 」─╮
+╭─「 💔 𝐏𝐄𝐑𝐑𝐎 𝐈𝐍𝐅𝐈𝐄𝐋 」─╮
 │
 │ 🍓 𝗧𝗮𝗿𝗴𝗲𝘁 : ${jidToTag(target)}
 │ 🌸 𝗘𝘃𝗶𝗱𝗲𝗻𝗰𝗶𝗮 : ${frasesPerro[Math.floor(Math.random()*4)]}
