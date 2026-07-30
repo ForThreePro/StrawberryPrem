@@ -130,7 +130,7 @@ ${configList}`,
 };
 
 handler.help = ['on', 'off'];
-handler.tags = ['group'];
+handler.tags = ['grupo'];
 handler.command = ['on', 'off', 'activar', 'desactivar'];
 handler.admin = true;
 handler.botAdmin = false;
