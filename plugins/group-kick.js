@@ -113,7 +113,7 @@ var handler = async (m, { conn, participants, usedPrefix, command }) => {
 };
 
 handler.help = ['kick'];
-handler.tags = ['group'];
+handler.tags = ['grupo'];
 handler.command = ['kick','echar','sacar'];
 handler.admin = true;
 handler.botAdmin = true;
