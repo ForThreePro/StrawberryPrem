@@ -158,7 +158,7 @@ const handler = async (m, { conn, command }) => {
 }
 
 handler.help = ['promote', 'demote']
-handler.tags = ['group']
+handler.tags = ['grupo']
 handler.command = ['promote', 'demote', 'promover', 'degradar']
 handler.admin = true
 handler.botAdmin = true
