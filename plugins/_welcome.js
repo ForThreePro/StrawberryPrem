@@ -46,7 +46,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
         ppUrl = await conn.profilePictureUrl(target, 'image');
     } catch {
         // Si no tiene foto, usa banner de fresas
-        ppUrl = 'https://i.imgur.com/8vH3QzK.jpg'
+        ppUrl = 'https://files.evogb.win/ksYsKo.jpg'
     }
 
     const welcome = format(`
