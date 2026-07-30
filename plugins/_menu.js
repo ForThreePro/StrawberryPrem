@@ -49,7 +49,7 @@ for (const plugin of Object.values(global.plugins || {})) {
 }
 
 const userName = m.pushName || 'Princesa'
-const IMG_MENU = 'https://i.imgur.com/8vH3QzK.jpg' // Cambia por una img de fresas
+const IMG_MENU = 'https://files.evogb.win/ksYsKo.jpg' // Cambia por una img de fresas
 
 let menuTexto = `🍓━━━━━━━━🍓
    ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘 𝐁𝐎𝐓 ✨
