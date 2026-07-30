@@ -18,18 +18,22 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner, 
             if (m.text.includes(linkThisGroup)) return !0;
         }
 
-        // AVISO CYBER
+        // AVISO STRAWBERRY 🍓
         await conn.sendMessage(m.chat, { 
             text: `
-╔═══「 🚨 𝐀𝐍𝐓𝐈𝐋𝐈𝐍𝐊 」═══╗
-║
-║ 𝗗𝗘𝗧𝗘𝗖𝗧𝗔𝗗𝗢 : Enlace Prohibido
-║ 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 : ${user}
-║ 𝗘𝗦𝗧𝗔𝗗𝗢 : ⚠️ Eliminando...
-║
-╚═══════════╝
+🍓━━━━━━━━🍓
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐘 𝐁𝐎𝐓 ✨
+🍓━━━━━━━━🍓
 
-> 𝙻𝚘𝚜 𝚎𝚗𝚕𝚊𝚌𝚎𝚜 𝚎𝚜𝚝𝚊𝚗 𝚙𝚛𝚘𝚑𝚒𝚋𝚒𝚍𝚘𝚜
+╭─「 🚨 𝐀𝐋𝐄𝐑𝐓𝐀 𝐀𝐍𝐓𝐈𝐋𝐈𝐍𝐊 」─╮
+│
+│ 🍓 𝗗𝗲𝘁𝗲𝗰𝘁𝗮𝗱𝗼 : Enlace Prohibido
+│ 🌸 𝗨𝘀𝘂𝗮𝗿𝗶𝗼 : ${user}
+│ 💖 𝗔𝗰𝗰𝗶𝗼𝗻 : ⚠️ Eliminando Mensaje...
+│
+╚━━━━━━━━━━╝
+
+🌸 𝙻𝚘𝚜 𝚎𝚗𝚕𝚊𝚌𝚎𝚜 𝚎𝚡𝚝𝚎𝚛𝚗𝚘𝚜 𝚗𝚘 𝚎𝚜𝚝𝚊𝚗 𝚙𝚎𝚛𝚖𝚒𝚝𝚒𝚍𝚘𝚜 🌸
 `.trim(), 
             mentions: [m.sender] 
         }, { quoted: m });
@@ -38,12 +42,19 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner, 
         if (!isBotAdmin) {
             return conn.sendMessage(m.chat, { 
                 text: `
-╔═══「 ⚠️ 𝐄𝐑𝐑𝐎𝐑 」═══╗
-║
-║ No tengo permisos para eliminar
-║ Activenme como Admin
-║
-╚═══════════╝
+🍓━━━━━━━━🍓
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐘 𝐁𝐎𝐓 ✨
+🍓━━━━━━━━🍓
+
+╭─「 🥺 𝐍𝐄𝐂𝐄𝐒𝐈𝐓𝐎 𝐀𝐘𝐔𝐃𝐀 」─╮
+│
+│ No tengo permisos para eliminar 💔
+│ Por favor denme Admin para proteger
+│ al grupo de enlaces
+│
+╚━━━━━━━━━━╝
+
+🌸 𝙰𝚢𝚞𝚍𝚎𝚗𝚖𝚎 𝚊 𝚌𝚞𝚒𝚍𝚊𝚛 𝚎𝚕 𝚐𝚛𝚞𝚙𝚘 🌸
 `.trim(), 
                 mentions: groupAdmins.map(v => v.id) 
             }, { quoted: m });
