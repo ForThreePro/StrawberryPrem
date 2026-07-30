@@ -22,7 +22,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner, 
         await conn.sendMessage(m.chat, { 
             text: `
 🍓━━━━━━━━🍓
-   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐘 𝐁𝐎𝐓 ✨
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘 𝐁𝐎𝐓 ✨
 🍓━━━━━━━━🍓
 
 ╭─「 🚨 𝐀𝐋𝐄𝐑𝐓𝐀 𝐀𝐍𝐓𝐈𝐋𝐈𝐍𝐊 」─╮
@@ -43,7 +43,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner, 
             return conn.sendMessage(m.chat, { 
                 text: `
 🍓━━━━━━━━🍓
-   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐘 𝐁𝐎𝐓 ✨
+   ✨ 𝐒𝐓𝐑𝐀𝐖𝐁𝐄𝐑𝐑𝐘 𝐁𝐎𝐓 ✨
 🍓━━━━━━━━🍓
 
 ╭─「 🥺 𝐍𝐄𝐂𝐄𝐒𝐈𝐓𝐎 𝐀𝐘𝐔𝐃𝐀 」─╮
