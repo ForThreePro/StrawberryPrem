@@ -57,7 +57,7 @@ let handler = async (m, { conn }) => {
 }
 
 handler.help = ['revoke']
-handler.tags = ['group']
+handler.tags = ['grupo']
 handler.command = ['revoke', 'restablecer', 'nuevoenlace']
 handler.group = true
 handler.admin = true
