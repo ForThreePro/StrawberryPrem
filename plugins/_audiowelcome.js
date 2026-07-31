@@ -1,39 +1,38 @@
 import fs from 'fs'
 import { join } from 'path'
+import { exec } from 'child_process'
+import { promisify } from 'util'
+const execAsync = promisify(exec)
 
 let handler = async (m, { conn, isAdmin }) => {
-  if (!isAdmin) return m.reply(`*╭─🍓『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』🍓─╮*
-*│* 💕 *SOLO ADMINS*
-*╰────────────────────🌸*`);
-  if (!m.quoted) return m.reply(`*╭─🍓『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗬 𝗕𝗢𝗧 』🍓─╮*
-*│* ✨ *RESPONDE A UN AUDIO LINDO*
-*╰────────────────────🌸*`);
+  if (!isAdmin) throw `╭─🍓 *『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』* 🍓─╮\n│ 😡 *SOLO ADMINS*\n╰─────────────────🍓`;
+  if (!m.quoted) throw `╭─🍓 *『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』* 🍓─╮\n│ ⚠️ *RESPONDE A UN AUDIO*\n╰─────────────────🍓`;
 
   let q = m.quoted
   let mime = (q.msg || q).mimetype || q.mimetype || ''
-  if (!/audio/.test(mime)) return m.reply(`*╭─🍓『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』🍓─╮*
-*│* ⚠️ *ESO NO ES UN AUDIO*
-*╰────────────────────🌸*`);
+  if (!/audio/.test(mime)) throw `╭─🍓 *『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』* 🍓─╮\n│ ⚠️ *ESO NO ES UN AUDIO*\n╰─────────────────🍓`;
 
   let chat = global.db.data.chats[m.chat]
-  if (!chat) global.db.data.chats[m.chat] = {}
+  if (!chat) chat = global.db.data.chats[m.chat] = {}
 
   let buffer = await q.download()
+  let tempFile = join('./temp', `${m.chat}_temp_${Date.now()}.ogg`)
   let fileName = join('./temp', `${m.chat}_welcome_${Date.now()}.mp3`)
   if (!fs.existsSync('./temp')) fs.mkdirSync('./temp')
-  fs.writeFileSync(fileName, buffer)
+  fs.writeFileSync(tempFile, buffer)
+
+  // Convertir a MP3 limpio
+  await execAsync(`ffmpeg -y -i "${tempFile}" -vn -ar 44100 -ac 2 -b:a 128k -c:a libmp3lame -id3v2_version 3 -metadata ptt="" "${fileName}"`)
+  fs.unlinkSync(tempFile)
 
   chat.welcomeAudio = fileName
   await global.db.write()
 
-  m.reply(`*╭─🍓『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』🍓─╮*
-*│* 🎵 *AUDIO DE BIENVENIDA GUARDADO*
-*│* *Ahora sonará súper tierno*
-*╰────────────────────🌸*`);
+  m.reply(`╭─🍓 *『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』* 🍓─╮\n│ 🎵 *AUDIO MP3 GUARDADO*\n│ *Ya no se silenciará*\n╰─────────────────🍓`);
 }
 handler.help = ['audiowelcome']
 handler.tags = ['group']
-handler.command = ['audiowelcome']
+handler.command = /^audiowelcome$/i
 handler.admin = true
 handler.group = true
 export default handler
