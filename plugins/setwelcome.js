@@ -1,17 +1,38 @@
-let handler = async (m, { conn, isAdmin, text }) => {
-  if (!isAdmin) throw `╭─🍓 *『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』* 🍓─╮\n│ 😡 *SOLO ADMINS*\n╰─────────────────🍓`;
-  if (!text) throw `╭─🍓 *『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』* 🍓─╮\n│ ⚠️ *FALTA EL TEXTO*\n│\n│ *Ejemplo*:.setwelcome @name bienvenid@ a @group\n│\n│ *Variables*: @name @user @group @desc %users @action @date\n╰─────────────────🍓`;
+let handler = async (m, { conn, text, isAdmin }) => {
+  if (!isAdmin) return m.reply(`╭─🐉 *『 𝗦𝗢𝗡 𝗚𝗢𝗞𝗨 𝗣𝗥𝗘𝗠 』* 🐉─╮
+│ 😡 *SIN PERMISOS*
+│
+│ *Solo admins pueden cambiar el mensaje*
+╰─────────────────🐉`);
 
-  let chat = global.db.data.chats[m.chat] || {}
-  chat.welcomeText = text
-  global.db.data.chats[m.chat] = chat
+  let chat = global.db.data.chats[m.chat]
+  if (!chat) global.db.data.chats[m.chat] = {}
+  chat = global.db.data.chats[m.chat]
+
+  if (!text) return m.reply(`╭─🐉 *『 𝗦𝗢𝗡 𝗚𝗢𝗞𝗨 𝗣𝗥𝗘𝗠 』* 🐉─╮
+│ ⚠️ *FALTA TEXTO*
+│
+│ *Ejemplo:*.setwelcome @name llego a @group
+│ *Variables:* @user @name @group @desc %users @action @date
+╰─────────────────🐉`);
+
+  chat.welcomeText = text;
   await global.db.write()
+  m.reply(`╭─🐉 *『 𝗦𝗢𝗡 𝗚𝗢𝗞𝗨 𝗣𝗥𝗘𝗠 』* 🐉─╮
+│ 💥 *BIENVENIDA GUARDADA*
+╰─────────────────🐉
 
-  m.reply(`╭─🍓 *『 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 』* 🍓─╮\n│ ✅ *BIENVENIDA GUARDADA*\n╰─────────────────🍓`);
+╭─「 𝗣𝗥𝗘𝗩𝗜𝗦𝗨𝗔𝗟𝗜𝗭𝗔𝗖𝗜𝗢𝗡 」─🐉─╮
+│ ${text}
+╰─────────────────🐉
+
+> *"Un nuevo guerrero se acerca"*`);
 }
-handler.help = ['setwelcome <text>']
-handler.tags = ['group']
-handler.command = /^setwelcome$/i
-handler.admin = true
-handler.group = true
-export default handler
+
+handler.help = ['setwelcome <texto>'];
+handler.tags = ['group'];
+handler.command = ['setwelcome'];
+handler.admin = true;
+handler.group = true;
+
+export default handler;
