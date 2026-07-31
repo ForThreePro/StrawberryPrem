@@ -5,7 +5,6 @@ export async function before(m, { conn, participants, groupMetadata }) {
     if (!m.messageStubType ||!m.isGroup) return true;
     let chat = global.db.data.chats[m.chat];
     if (!chat?.welcome) return true;
-
     let target = m.messageStubParameters?.[0];
     if (!target) return true;
 
@@ -27,20 +26,20 @@ export async function before(m, { conn, participants, groupMetadata }) {
     };
 
     const format = (text) => text
-      .replace(/@user/g, `@${target.split('@')[0]}`)
-      .replace(/@name/g, targetName)
-      .replace(/@group/g, groupMetadata.subject)
-      .replace(/@desc/g, groupMetadata.desc?.toString() || '*Sin descripción*')
-      .replace(/%users/g, memberCount)
-      .replace(/@action/g, actionText[m.messageStubType] || '')
-      .replace(/@date/g, new Date().toLocaleString('es-PE'));
+     .replace(/@user/g, `@${target.split('@')[0]}`)
+     .replace(/@name/g, targetName)
+     .replace(/@group/g, groupMetadata.subject)
+     .replace(/@desc/g, groupMetadata.desc?.toString() || '*Sin descripción*')
+     .replace(/%users/g, memberCount)
+     .replace(/@action/g, actionText[m.messageStubType] || '')
+     .replace(/@date/g, new Date().toLocaleString('es-PE'));
 
     let ppUrl;
     try { ppUrl = await conn.profilePictureUrl(target, 'image'); }
-    catch { ppUrl = 'https://files.evogb.win/INtgbw.jpg' }
+    catch { ppUrl = 'https://i.imgur.com/2zG3V.jpg' }
 
     const defaultWelcome = `*${e1} NUEVO MIEMBRO ${e1}*\n\n*Nombre*: @name\n*Grupo*: @group\n*Estado*: @action\n*Miembros*: %users\n*Fecha*: @date`;
-    const defaultBye = `*${e1} MIEMBRO QUE SE FUE ${e1}*\n\n*Nombre*: @name\n*Grupo*: @group\n*Estado*: @action\n\n*Miembros*: %users\n*Fecha*: @date`;
+    const defaultBye = `*${e1} MIEMBRO QUE SE FUE ${e1}*\n\n*Nombre*: @name\n*Grupo*: @group\n*Estado*: @action\n*Miembros*: %users\n*Fecha*: @date`;
 
     const welcome = format(chat.welcomeText || defaultWelcome);
     const bye = format(chat.byeText || defaultBye);
@@ -48,7 +47,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     if (actor) mentions.push(actor);
     const context = { contextInfo: { mentionedJid: mentions } };
 
-    // ENVIA MP3 MANUAL - NO SE SILENCIA
+    // ENVIA MP3 MANUAL - ESTO EVITA EL SILENCIO
     const sendAudio = async (audioPath) => {
         if (!fs.existsSync(audioPath)) return
         try {
